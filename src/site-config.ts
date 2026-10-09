@@ -148,7 +148,7 @@ export const config: Config = {
 
   // Article page views + site-wide visit counter (your own Waline server)
   pageview: {
-    server: '',
+    server: 'https://junziyouning.netlify.app/.netlify/functions/comment',
     siteWide: false
   },
 
@@ -191,9 +191,9 @@ export const config: Config = {
 
   comment: {
     provider: 'waline',
-    // Fill in your Waline server URL to enable comments, e.g. deployed on
-    // Vercel + LeanCloud: https://your-waline.vercel.app/
-    server: ''
+    // Waline server deployed as Netlify Function (zip direct-upload).
+    // Function direct path — see /tmp route notes; CORS open via a-c-allow-origin: *
+    server: 'https://junziyouning.netlify.app/.netlify/functions/comment'
   },
 
   friends: []
